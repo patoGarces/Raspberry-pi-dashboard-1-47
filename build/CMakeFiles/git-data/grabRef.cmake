@@ -15,10 +15,10 @@
 
 set(HEAD_HASH)
 
-file(READ "/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/CMakeFiles/git-data/HEAD" HEAD_CONTENTS LIMIT 1024)
+file(READ "/Users/naranjax/ESP32Projects/RaspiDashboard/build/CMakeFiles/git-data/HEAD" HEAD_CONTENTS LIMIT 1024)
 
 string(STRIP "${HEAD_CONTENTS}" HEAD_CONTENTS)
-set(GIT_DIR "/Users/naranjax/esp/esp-idf/.git")
+set(GIT_DIR "/Users/naranjax/ESP32Projects/RaspiDashboard/.git")
 # handle git-worktree
 if(EXISTS "${GIT_DIR}/commondir")
 	file(READ "${GIT_DIR}/commondir" GIT_DIR_NEW LIMIT 1024)
@@ -34,17 +34,17 @@ if(HEAD_CONTENTS MATCHES "ref")
 	# named branch
 	string(REPLACE "ref: " "" HEAD_REF "${HEAD_CONTENTS}")
 	if(EXISTS "${GIT_DIR}/${HEAD_REF}")
-		configure_file("${GIT_DIR}/${HEAD_REF}" "/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/CMakeFiles/git-data/head-ref" COPYONLY)
+		configure_file("${GIT_DIR}/${HEAD_REF}" "/Users/naranjax/ESP32Projects/RaspiDashboard/build/CMakeFiles/git-data/head-ref" COPYONLY)
 	elseif(EXISTS "${GIT_DIR}/logs/${HEAD_REF}")
-		configure_file("${GIT_DIR}/logs/${HEAD_REF}" "/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/CMakeFiles/git-data/head-ref" COPYONLY)
+		configure_file("${GIT_DIR}/logs/${HEAD_REF}" "/Users/naranjax/ESP32Projects/RaspiDashboard/build/CMakeFiles/git-data/head-ref" COPYONLY)
 		set(HEAD_HASH "${HEAD_REF}")
 	endif()
 else()
 	# detached HEAD
-	configure_file("${GIT_DIR}/HEAD" "/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/CMakeFiles/git-data/head-ref" COPYONLY)
+	configure_file("${GIT_DIR}/HEAD" "/Users/naranjax/ESP32Projects/RaspiDashboard/build/CMakeFiles/git-data/head-ref" COPYONLY)
 endif()
 
 if(NOT HEAD_HASH)
-	file(READ "/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/CMakeFiles/git-data/head-ref" HEAD_HASH LIMIT 1024)
+	file(READ "/Users/naranjax/ESP32Projects/RaspiDashboard/build/CMakeFiles/git-data/head-ref" HEAD_HASH LIMIT 1024)
 	string(STRIP "${HEAD_HASH}" HEAD_HASH)
 endif()

@@ -1545,7 +1545,7 @@ rule C_STATIC_LIBRARY_LINKER____idf_lvgl_ui_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /Users/naranjax/.espressif/tools/cmake/3.24.0/CMake.app/Contents/bin/cmake --regenerate-during-build -S/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example -B/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build
+  command = /Users/naranjax/.espressif/tools/cmake/3.24.0/CMake.app/Contents/bin/cmake --regenerate-during-build -S/Users/naranjax/ESP32Projects/RaspiDashboard -B/Users/naranjax/ESP32Projects/RaspiDashboard/build
   description = Re-running CMake...
   generator = 1
 

@@ -5,18 +5,18 @@ cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
   "/Users/naranjax/esp/esp-idf/components/bootloader/subproject"
-  "/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/bootloader"
-  "/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/bootloader-prefix"
-  "/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/bootloader-prefix/tmp"
-  "/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/bootloader-prefix/src/bootloader-stamp"
-  "/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/bootloader-prefix/src"
-  "/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/bootloader-prefix/src/bootloader-stamp"
+  "/Users/naranjax/ESP32Projects/RaspiDashboard/build/bootloader"
+  "/Users/naranjax/ESP32Projects/RaspiDashboard/build/bootloader-prefix"
+  "/Users/naranjax/ESP32Projects/RaspiDashboard/build/bootloader-prefix/tmp"
+  "/Users/naranjax/ESP32Projects/RaspiDashboard/build/bootloader-prefix/src/bootloader-stamp"
+  "/Users/naranjax/ESP32Projects/RaspiDashboard/build/bootloader-prefix/src"
+  "/Users/naranjax/ESP32Projects/RaspiDashboard/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/Users/naranjax/ESP32Projects/RaspiDashboard/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/Users/naranjax/ESP32Projects/RaspiDashboard/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

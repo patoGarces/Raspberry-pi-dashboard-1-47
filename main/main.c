@@ -3,29 +3,16 @@
 #include "esp_err.h"
 #include "esp_log.h"
 #include "esp_check.h"
-
 #include "nvs_flash.h"
-
 #include "esp_lvgl_port.h"
-
 #include "bsp_display.h"
 #include "bsp_touch.h"
 #include "bsp_i2c.h"
 #include "bsp_spi.h"
-// #include "bsp_wifi.h"
-// #include "bsp_sdcard.h"
-// #include "bsp_battery.h"
-// #include "bsp_qmi8658.h"
 
-// #include "iot_button.h"
-// #include "button_gpio.h"
+#include "lvgl_ui.h"
 
-#include "demos/lv_demos.h"
-
-
-// #include "lvgl_ui.h"
-
-#define EXAMPLE_DISPLAY_ROTATION 0
+#define EXAMPLE_DISPLAY_ROTATION 90
 
 #if EXAMPLE_DISPLAY_ROTATION == 90 || EXAMPLE_DISPLAY_ROTATION == 270
 #define EXAMPLE_LCD_H_RES (320)
@@ -39,7 +26,7 @@
 #define EXAMPLE_LCD_DRAW_BUFF_DOUBLE (1)
 
 
-static char *TAG = "lvgl_example";
+static char *TAG = "raspi_dashboard";
 
 /* LCD IO and panel */
 static esp_lcd_panel_io_handle_t io_handle = NULL;
@@ -49,7 +36,6 @@ static esp_lcd_touch_handle_t touch_handle = NULL;
 /* LVGL display and touch */
 static lv_display_t *lvgl_disp = NULL;
 static lv_indev_t *lvgl_touch_indev = NULL;
-
 
 static esp_err_t app_lvgl_init(void);
 
@@ -73,16 +59,11 @@ void app_main(void)
 
     ESP_ERROR_CHECK(app_lvgl_init());
 
-
-
     bsp_display_brightness_init();
     bsp_display_set_brightness(100);
 
-    if (lvgl_port_lock(0))
-    {
-        // lv_demo_benchmark();
-        // lv_demo_music();
-        lv_demo_widgets();
+    if (lvgl_port_lock(0)) {
+        lvgl_ui_init();
         lvgl_port_unlock();
     }
 }

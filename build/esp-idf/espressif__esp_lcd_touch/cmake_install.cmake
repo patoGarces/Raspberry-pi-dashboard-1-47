@@ -1,4 +1,4 @@
-# Install script for directory: /Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/managed_components/espressif__esp_lcd_touch
+# Install script for directory: /Users/naranjax/ESP32Projects/RaspiDashboard/managed_components/espressif__esp_lcd_touch
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

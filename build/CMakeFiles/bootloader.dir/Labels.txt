@@ -1,13 +1,13 @@
 # Target labels
  bootloader
 # Source files and their labels
-/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/CMakeFiles/bootloader
-/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/CMakeFiles/bootloader.rule
-/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/CMakeFiles/bootloader-complete.rule
-/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
-/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
-/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
-/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
-/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
-/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
-/Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
+/Users/naranjax/ESP32Projects/RaspiDashboard/build/CMakeFiles/bootloader
+/Users/naranjax/ESP32Projects/RaspiDashboard/build/CMakeFiles/bootloader.rule
+/Users/naranjax/ESP32Projects/RaspiDashboard/build/CMakeFiles/bootloader-complete.rule
+/Users/naranjax/ESP32Projects/RaspiDashboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/Users/naranjax/ESP32Projects/RaspiDashboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/Users/naranjax/ESP32Projects/RaspiDashboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/Users/naranjax/ESP32Projects/RaspiDashboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/Users/naranjax/ESP32Projects/RaspiDashboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/Users/naranjax/ESP32Projects/RaspiDashboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/Users/naranjax/ESP32Projects/RaspiDashboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

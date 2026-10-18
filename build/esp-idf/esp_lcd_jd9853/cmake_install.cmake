@@ -1,4 +1,4 @@
-# Install script for directory: /Users/naranjax/Downloads/ESP32-C6-Touch-LCD-1.47-Demo/ESP-IDF/03_lvgl_example/components/esp_lcd_jd9853
+# Install script for directory: /Users/naranjax/ESP32Projects/RaspiDashboard/components/esp_lcd_jd9853
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
