@@ -1,4 +1,5 @@
 #include "lvgl_ui.h"
+#include "esp_log.h"
 
 #define COLOR_BG       0x10141D
 #define COLOR_PANEL    0x1C2330
@@ -22,6 +23,8 @@ static lv_obj_t *service_mqtt;
 static lv_obj_t *service_appium;
 static lv_obj_t *control_status;
 
+static lvgl_ui_command_cb_t command_callback = NULL;
+
 static dashboard_data_t current_data = {
     .cpu_percent = 24,
     .ram_percent = 40,
@@ -37,6 +40,10 @@ static dashboard_data_t current_data = {
     .mqtt_online = true,
     .appium_online = false,
 };
+
+void lvgl_ui_set_command_callback(lvgl_ui_command_cb_t callback) {
+    command_callback = callback;
+}
 
 static lv_obj_t *create_label(
     lv_obj_t *parent,
@@ -181,15 +188,12 @@ static void create_services(lv_obj_t *tile) {
 }
 
 
-static void control_button_event(lv_event_t *event) {
-    if (lv_event_get_code(event) != LV_EVENT_CLICKED) {
-        return;
+static void control_button_event(lv_event_t *e) {
+    const char *command = lv_event_get_user_data(e);
+
+    if (command_callback != NULL) {
+        command_callback(command);
     }
-
-    control_status = control_status;
-
-    lv_label_set_text(
-        control_status, "UART control not connected");
 }
 
 static void create_controls(lv_obj_t *tile) {
@@ -225,7 +229,7 @@ static void create_controls(lv_obj_t *tile) {
     lv_obj_set_style_text_color(reboot_label, lv_color_hex(COLOR_TEXT), 0);
     lv_obj_align(reboot_label, LV_ALIGN_BOTTOM_MID, 0, -8);
 
-    lv_obj_add_event_cb(reboot, control_button_event, LV_EVENT_CLICKED, NULL);
+    lv_obj_add_event_cb(reboot, control_button_event, LV_EVENT_CLICKED, "REBOOT");
 
     lv_obj_t *shutdown = lv_btn_create(tile);
     lv_obj_set_size(shutdown, 120, 100);
@@ -250,7 +254,7 @@ static void create_controls(lv_obj_t *tile) {
     lv_obj_set_style_text_color(shutdown_label, lv_color_hex(COLOR_TEXT), 0);
     lv_obj_align(shutdown_label, LV_ALIGN_BOTTOM_MID, 0, -8);
 
-    lv_obj_add_event_cb(shutdown, control_button_event, LV_EVENT_CLICKED, NULL);
+    lv_obj_add_event_cb(shutdown, control_button_event, LV_EVENT_CLICKED, "SHUTDOWN");
 
     control_status = create_label(
         tile, "UART control not connected", COLOR_ORANGE,
@@ -319,6 +323,18 @@ void lvgl_ui_update(const dashboard_data_t *data) {
     snprintf(text, sizeof(text), "Appium: %s",
              current_data.appium_online ? "Online" : "Offline");
     lv_label_set_text(service_appium, text);
+
+    if (control_status != NULL) {
+        if (data->uart_online) {
+            lv_label_set_text(control_status, "UART connected");
+            lv_obj_set_style_text_color(
+                control_status, lv_color_hex(0x2ECC71), 0);
+        } else {
+            lv_label_set_text(control_status, "UART control not connected");
+            lv_obj_set_style_text_color(
+                control_status, lv_color_hex(COLOR_ORANGE), 0);
+        }
+    }
 }
 
 void lvgl_ui_init(void) {

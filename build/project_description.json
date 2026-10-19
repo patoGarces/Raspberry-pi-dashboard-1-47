@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "lvgl_example",
-    "project_version":    "0318a96-dirty",
+    "project_version":    "9836770-dirty",
     "project_path":       "/Users/naranjax/ESP32Projects/RaspiDashboard",
     "idf_path":           "/Users/naranjax/esp/esp-idf",
     "build_dir":          "/Users/naranjax/ESP32Projects/RaspiDashboard/build",
@@ -935,12 +935,12 @@
             "dir": "/Users/naranjax/ESP32Projects/RaspiDashboard/main",
             "type": "LIBRARY",
             "lib": "__idf_main",
-            "reqs": [],
+            "reqs": [ "json", "lvgl_ui" ],
             "priv_reqs": [ "espressif__button", "espressif__esp_lcd_touch", "espressif__esp_lvgl_port", "lvgl__lvgl" ],
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__button", "espressif__esp_lcd_touch", "espressif__esp_lvgl_port", "lvgl__lvgl" ],
             "file": "/Users/naranjax/ESP32Projects/RaspiDashboard/build/esp-idf/main/libmain.a",
-            "sources": [ "/Users/naranjax/ESP32Projects/RaspiDashboard/main/main.c" ],
+            "sources": [ "/Users/naranjax/ESP32Projects/RaspiDashboard/main/main.c", "/Users/naranjax/ESP32Projects/RaspiDashboard/main/uart_link.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {
@@ -2232,7 +2232,7 @@
             "prefix": "idf",
             "dir": "/Users/naranjax/ESP32Projects/RaspiDashboard/main",
             "lib": "__idf_main",
-            "reqs": [],
+            "reqs": [ "json", "lvgl_ui" ],
             "priv_reqs": [ "espressif__button", "espressif__esp_lcd_touch", "espressif__esp_lvgl_port", "lvgl__lvgl" ],
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__button", "espressif__esp_lcd_touch", "espressif__esp_lvgl_port", "lvgl__lvgl" ],

@@ -61,11 +61,11 @@
 /Users/naranjax/ESP32Projects/RaspiDashboard/build/esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 /Users/naranjax/ESP32Projects/RaspiDashboard/build/esp-idf/spiffs/libspiffs.a
 /Users/naranjax/ESP32Projects/RaspiDashboard/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
-/Users/naranjax/ESP32Projects/RaspiDashboard/build/esp-idf/espressif__button/libespressif__button.a
-/Users/naranjax/ESP32Projects/RaspiDashboard/build/esp-idf/espressif__esp_lcd_touch/libespressif__esp_lcd_touch.a
 /Users/naranjax/ESP32Projects/RaspiDashboard/build/esp-idf/lvgl__lvgl/liblvgl__lvgl.a
-/Users/naranjax/ESP32Projects/RaspiDashboard/build/esp-idf/main/libmain.a
 /Users/naranjax/ESP32Projects/RaspiDashboard/build/esp-idf/esp_lcd_jd9853/libesp_lcd_jd9853.a
+/Users/naranjax/ESP32Projects/RaspiDashboard/build/esp-idf/espressif__esp_lcd_touch/libespressif__esp_lcd_touch.a
 /Users/naranjax/ESP32Projects/RaspiDashboard/build/esp-idf/esp_lcd_touch_axs5106/libesp_lcd_touch_axs5106.a
 /Users/naranjax/ESP32Projects/RaspiDashboard/build/esp-idf/esp_bsp/libesp_bsp.a
 /Users/naranjax/ESP32Projects/RaspiDashboard/build/esp-idf/lvgl_ui/liblvgl_ui.a
+/Users/naranjax/ESP32Projects/RaspiDashboard/build/esp-idf/espressif__button/libespressif__button.a
+/Users/naranjax/ESP32Projects/RaspiDashboard/build/esp-idf/main/libmain.a

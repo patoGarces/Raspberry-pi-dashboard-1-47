@@ -11,6 +11,7 @@
 #include "bsp_spi.h"
 
 #include "lvgl_ui.h"
+#include "uart_link.h"
 
 #define EXAMPLE_DISPLAY_ROTATION 90
 
@@ -66,6 +67,9 @@ void app_main(void)
         lvgl_ui_init();
         lvgl_port_unlock();
     }
+
+    lvgl_ui_set_command_callback(uart_link_send_command);
+    uart_link_init();
 }
 
 static esp_err_t app_lvgl_init(void)

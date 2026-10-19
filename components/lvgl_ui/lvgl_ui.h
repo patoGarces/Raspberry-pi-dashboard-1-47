@@ -28,10 +28,15 @@ typedef struct {
     uint32_t mqtt_uptime_seconds;
     uint32_t appium_uptime_seconds;
     bool power_warning;
+    bool uart_online;
 } dashboard_data_t;
 
 void lvgl_ui_init(void);
 void lvgl_ui_update(const dashboard_data_t *data);
+
+typedef void (*lvgl_ui_command_cb_t)(const char *command);
+
+void lvgl_ui_set_command_callback(lvgl_ui_command_cb_t callback);
 
 #ifdef __cplusplus
 }
