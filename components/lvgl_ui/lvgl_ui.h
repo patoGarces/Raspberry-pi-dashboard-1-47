@@ -14,12 +14,20 @@ extern "C" {
 
 typedef struct {
     uint8_t cpu_percent;
-    uint32_t ram_used_mb;
-    uint32_t ram_total_mb;
+    uint8_t ram_percent;
     float temperature_c;
     uint32_t uptime_seconds;
-    bool wifi_connected;
+    bool network_online;
     char ip_address[16];
+    float rx_kbps;
+    float tx_kbps;
+    bool ha_online;
+    bool mqtt_online;
+    bool appium_online;
+    uint32_t ha_uptime_seconds;
+    uint32_t mqtt_uptime_seconds;
+    uint32_t appium_uptime_seconds;
+    bool power_warning;
 } dashboard_data_t;
 
 void lvgl_ui_init(void);

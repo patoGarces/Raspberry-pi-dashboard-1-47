@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "lvgl_example",
-    "project_version":    "4356092-dirty",
+    "project_version":    "0318a96-dirty",
     "project_path":       "/Users/naranjax/ESP32Projects/RaspiDashboard",
     "idf_path":           "/Users/naranjax/esp/esp-idf",
     "build_dir":          "/Users/naranjax/ESP32Projects/RaspiDashboard/build",

@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//No help, variable specified on the command line.
+CCACHE_ENABLE:UNINITIALIZED=0
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/Users/naranjax/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/riscv32-esp-elf-addr2line
 
@@ -344,6 +347,9 @@ Mbed TLS_IS_TOP_LEVEL:STATIC=OFF
 Mbed TLS_SOURCE_DIR:STATIC=/Users/naranjax/esp/esp-idf/components/mbedtls/mbedtls
 
 //No help, variable specified on the command line.
+PYTHON:UNINITIALIZED=/Users/naranjax/.espressif/python_env/idf5.2_py3.9_env/bin/python3
+
+//No help, variable specified on the command line.
 PYTHON_DEPS_CHECKED:UNINITIALIZED=1
 
 //Allow unsafe builds. These builds ARE NOT SECURE.
@@ -584,7 +590,7 @@ C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS:INTERNAL=1
 //Details about finding Git
 FIND_PACKAGE_MESSAGE_DETAILS_Git:INTERNAL=[/usr/bin/git][v2.54.0 (Apple Git-157)()]
 //Details about finding Python3
-FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/Users/naranjax/.espressif/python_env/idf5.2_py3.9_env/bin/python][cfound components: Interpreter ][v3.9.6()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/Users/naranjax/.espressif/python_env/idf5.2_py3.9_env/bin/python3][cfound components: Interpreter ][v3.9.6()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //ADVANCED property for variable: GIT_EXECUTABLE
@@ -601,8 +607,8 @@ HAVE_TIME_T_SIZE:INTERNAL=TRUE
 TIME_T_SIZE:INTERNAL=8
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
-_Python3_EXECUTABLE:INTERNAL=/Users/naranjax/.espressif/python_env/idf5.2_py3.9_env/bin/python
+_Python3_EXECUTABLE:INTERNAL=/Users/naranjax/.espressif/python_env/idf5.2_py3.9_env/bin/python3
 //Python3 Properties
 _Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;9;6;32;;;/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9;/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9;/Users/naranjax/.espressif/python_env/idf5.2_py3.9_env/lib/python3.9/site-packages;/Users/naranjax/.espressif/python_env/idf5.2_py3.9_env/lib/python3.9/site-packages
-_Python3_INTERPRETER_SIGNATURE:INTERNAL=2c85b23cb3e429005e83a4a9b16d7426
+_Python3_INTERPRETER_SIGNATURE:INTERNAL=0b84298c1c2a65a5bdb193a4e8343ecf
 

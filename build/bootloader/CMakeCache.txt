@@ -251,7 +251,7 @@ IGNORE_EXTRA_COMPONENT:UNINITIALIZED=
 PROJECT_SOURCE_DIR:UNINITIALIZED=/Users/naranjax/ESP32Projects/RaspiDashboard
 
 //No help, variable specified on the command line.
-PYTHON:UNINITIALIZED=/Users/naranjax/.espressif/python_env/idf5.2_py3.9_env/bin/python
+PYTHON:UNINITIALIZED=/Users/naranjax/.espressif/python_env/idf5.2_py3.9_env/bin/python3
 
 //No help, variable specified on the command line.
 PYTHON_DEPS_CHECKED:UNINITIALIZED=1
