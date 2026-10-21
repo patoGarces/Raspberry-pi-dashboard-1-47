@@ -1,5 +1,5 @@
 {
     "idf.currentSetup": "/Users/naranjax/esp/esp-idf",
-    "idf.port": "/dev/tty.usbmodem2101",
+    "idf.port": "/dev/tty.usbmodem21301",
     "idf.flashType": "UART"
 }

@@ -25,21 +25,21 @@ static lv_obj_t *control_status;
 
 static lvgl_ui_command_cb_t command_callback = NULL;
 
-static dashboard_data_t current_data = {
-    .cpu_percent = 24,
-    .ram_percent = 40,
-    .temperature_c = 48.5f,
-    .uptime_seconds = 86432,
-
-    .network_online = true,
-    .ip_address = "192.168.2.113",
-    .rx_kbps = 125.0f,
-    .tx_kbps = 42.0f,
-
-    .ha_online = true,
-    .mqtt_online = true,
+static const dashboard_data_t default_data = {
+    .cpu_percent = 0,
+    .ram_percent = 0,
+    .temperature_c = 0.0f,
+    .uptime_seconds = 0,
+    .network_online = false,
+    .ip_address = "-.-.-.-",
+    .rx_kbps = 0.0f,
+    .tx_kbps = 0.0f,
+    .ha_online = false,
+    .mqtt_online = false,
     .appium_online = false,
 };
+
+static dashboard_data_t current_data = default_data;
 
 void lvgl_ui_set_command_callback(lvgl_ui_command_cb_t callback) {
     command_callback = callback;
@@ -271,7 +271,19 @@ void lvgl_ui_update(const dashboard_data_t *data) {
         return;
     }
 
-    current_data = *data;
+    if (control_status != NULL) {
+        if (data->uart_online) {
+            current_data = *data;
+            lv_label_set_text(control_status, "UART connected");
+            lv_obj_set_style_text_color(
+                control_status, lv_color_hex(0x2ECC71), 0);
+        } else {
+            current_data = default_data;
+            lv_label_set_text(control_status, "UART control not connected");
+            lv_obj_set_style_text_color(
+                control_status, lv_color_hex(COLOR_ORANGE), 0);
+        }
+    }
 
     char text[64];
 
@@ -323,18 +335,6 @@ void lvgl_ui_update(const dashboard_data_t *data) {
     snprintf(text, sizeof(text), "Appium: %s",
              current_data.appium_online ? "Online" : "Offline");
     lv_label_set_text(service_appium, text);
-
-    if (control_status != NULL) {
-        if (data->uart_online) {
-            lv_label_set_text(control_status, "UART connected");
-            lv_obj_set_style_text_color(
-                control_status, lv_color_hex(0x2ECC71), 0);
-        } else {
-            lv_label_set_text(control_status, "UART control not connected");
-            lv_obj_set_style_text_color(
-                control_status, lv_color_hex(COLOR_ORANGE), 0);
-        }
-    }
 }
 
 void lvgl_ui_init(void) {
